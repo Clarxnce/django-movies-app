@@ -1,0 +1,26 @@
+{% extends 'movies/_base.html' %}
+
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        {% block title %}
+        <title>My Favourite Movies</title>
+        {% endblock %}
+    </head>
+    <body>
+    {% block content %}
+        <h1>My favourite Movies!</h1>
+        <h3>My favourite genres are: Sci-fi, Action and Comedy</h3>
+        {% if movies %}
+            <p>My favourite movies are:</p>
+            <ul>
+                {% for movie in movies %}
+                    <li>{{ movie  | title}}</li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p>No favourite movies...</p>
+        {% endif %}
+        {% endblock %}
+    </body>
+</html>
